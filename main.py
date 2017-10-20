@@ -20,7 +20,9 @@ args = parser.parse_args()
 i = 0
 skip = 0
 used_ip = []
-while (args.infinity or i < args.count):
+begin = time.time()
+while (args.infinity or i < int(args.count)):
+    now = time.time()
     src = str(RandIP())
     if src in used_ip:
         skip += 1
@@ -33,5 +35,8 @@ while (args.infinity or i < args.count):
 
     sys.stdout.write("\r {}".format(i))
     sys.stdout.write("." * skip)
+    sys.stdout.write(" ")
+    sys.stdout.write(str(now - begin))
     i += 1
     skip = 0
+    begin = now
