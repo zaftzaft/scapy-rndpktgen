@@ -10,7 +10,7 @@ from scapy.all import *
 
 parser = argparse.ArgumentParser()
 
-parser.add_argument("-i", "--iface", required=False, help="interface", default=None)
+parser.add_argument("-i", "--iface", required=True, help="interface", default=None)
 #parser.add_argument("-t", "--timeout", required=False, help="timeout", default=3)
 parser.add_argument("-c", "--count", required=False, help="pkt count", default=1000)
 parser.add_argument("-f", "--infinity", required=False, help="infinite loop", action="store_true")
