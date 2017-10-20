@@ -19,7 +19,7 @@ args = parser.parse_args()
 
 i = 0
 used_ip = []
-while args.infinity || i < args.count:
+while (args.infinity or i < args.count):
     src = str(RandIP())
     if src in used_ip:
         continue
