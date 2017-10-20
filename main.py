@@ -18,10 +18,12 @@ parser.add_argument("-f", "--infinity", required=False, help="infinite loop", ac
 args = parser.parse_args()
 
 i = 0
+skip = 0
 used_ip = []
 while (args.infinity or i < args.count):
     src = str(RandIP())
     if src in used_ip:
+        skip += 1
         continue
 
     used_ip.append(src)
@@ -30,4 +32,6 @@ while (args.infinity or i < args.count):
     sendp(frame,iface=args.iface,verbose=False)
 
     sys.stdout.write("\r {}".format(i))
+    sys.stdout.write("." * skip)
     i += 1
+    skip = 0
