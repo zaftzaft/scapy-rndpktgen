@@ -27,6 +27,7 @@ while (args.infinity or i < args.count):
     used_ip.append(src)
 
     frame = Ether(dst=str(RandMAC()),src=str(RandMAC()))/IP(src=src,dst=str(RandIP()))/UDP(sport=random.randint(1,0xffff),dport=random.randint(1,0xffff))
-    sendp(frame,iface=args.iface)
+    sendp(frame,iface=args.iface,verbose=False)
 
     sys.stdout.write("\r {}".format(i))
+    i++
