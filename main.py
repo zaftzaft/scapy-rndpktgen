@@ -30,4 +30,4 @@ while (args.infinity or i < args.count):
     sendp(frame,iface=args.iface,verbose=False)
 
     sys.stdout.write("\r {}".format(i))
-    i++
+    i += 1
